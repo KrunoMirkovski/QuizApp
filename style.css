@@ -1,0 +1,70 @@
+body{
+    color: whitesmoke;
+    margin: 0;
+}
+.main{
+    height: 100vh;
+    background: url(background_img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.header{
+    width: 100%;
+    height: 5vh;
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+}
+.logo{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(214, 40, 40);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+.homeSection{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quizIntro{
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.homeSection h1 {
+    font-size: 68px;
+    font-weight: 800;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+.homeSection p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.start_btn{
+    width: 160px;
+    height: 40px;
+    background: #c71616;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5 px;
+    color: aliceblue;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.start_btn:hover{
+    background:rgb(27, 22, 22);
+}
