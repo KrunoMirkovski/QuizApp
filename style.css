@@ -9,6 +9,12 @@ body{
     background: url(background_img.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+    pointer-events: all;
+    transition: 0.3 ease;
+}
+.main.active{
+    filter: blur(12px);
+    pointer-events: none;
 }
 .header{
     width: 100%;
@@ -72,14 +78,14 @@ body{
 }
 .popup{
     width: 760px;
-    height: 460px;
+    height: 440px;
     background-color: rgb(240, 222, 221);
     position: absolute;
     top: 50%;
     left: 50%;
     border-radius: 12px;
     padding: 10px 20px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.7);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -89,7 +95,9 @@ body{
 }
 .popup.active{
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
     pointer-events:all;
+
 }
 .popup h2{
     font-size: 46px;
@@ -100,7 +108,7 @@ body{
     font-size: 16px;
     font-weight: 600;
     color: darkred;
-    display: inline;
+    display: inline-block;
     padding-left: 40px;
 }
 .btn_wrap{
@@ -134,6 +142,7 @@ body{
 }
 .btn_info:nth-child(1):hover{
     background-color: #af1a1a;
+    border-color: #af1a1a;
     color: #fff;
 }
 .btn_info:nth-child(2):hover{
