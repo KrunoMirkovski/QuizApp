@@ -71,7 +71,8 @@ body{
     background:rgb(27, 22, 22);
 }
 .popup{
-    width: 460px;
+    width: 760px;
+    height: 460px;
     background-color: rgb(240, 222, 221);
     position: absolute;
     top: 50%;
@@ -79,26 +80,34 @@ body{
     border-radius: 12px;
     padding: 10px 20px;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+.popup.active{
+    opacity: 1;
+    pointer-events:all;
 }
 .popup h2{
-    font-size: 44px;
+    font-size: 46px;
     color: #c71616;
     text-align: center;
 }
 .info{
-    display: inline-block;
     font-size: 16px;
     font-weight: 600;
     color: darkred;
-    margin: 8px 0;
-    padding: 0 8px;
+    display: inline;
+    padding-left: 40px;
 }
 .btn_wrap{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 0 10px 0;
-    padding: 0 8px;
+    padding: 0 40px;
 }
 .btn_info{
     width: 100px;
