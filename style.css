@@ -1,6 +1,7 @@
 body{
-    background-color: aliceblue;
+    background-color: darkred;
     margin: 0;
+    overflow:hidden;
     
 }
 .main{
@@ -27,18 +28,27 @@ body{
     padding: 20px; 
 }
 .logo{
+    width: 60%;
+    height: 50px;
     font-size: 40px;
     font-weight: bold;
     color: rgb(214, 40, 40);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
+    text-align: center;
 }
-.homeSection{
-    width: 100vw;
+.headerSection{
+    display: flex;
     height: 100vh;
+    width: 200%;
+}
+.homeWrap{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: -50%;
 }
 .quizIntro{
     max-width: 700px;
@@ -47,21 +57,21 @@ body{
     align-items: center;
     justify-content: center;
 }
-.homeSection h1 {
-    font-size: 68px;
+.headerSection h1 {
+    font-size: 56px;
     font-weight: 800;
     display: flex;
     justify-content:center;
     align-items: center;
     text-align: center;
 }
-.homeSection p {
+.headerSection p {
     font-size: 18px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .btn_start{
-    width: 160px;
+    width: 180px;
     height: 40px;
     background: #c71616;
     border: 2px solid #fff;
@@ -79,7 +89,7 @@ body{
 .popup{
     width: 760px;
     height: 440px;
-    background-color: rgb(240, 222, 221);
+    background-color: rgb(255, 223, 222);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -148,5 +158,17 @@ body{
 .btn_info:nth-child(2):hover{
     background-color: #af1a1a;
     border-color: #af1a1a;
+}
+.quiz{
+    width: 100%;
+    height: 100vh;
+    background-color: steelblue;
+    position: relative;
+    left: +50%;
+    transition: 0.5s ease-in;
+    z-index: 10;
+}
+.quiz.active {
+    left: 0;
 }
 
