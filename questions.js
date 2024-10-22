@@ -18,7 +18,7 @@ let questions = [
     options: [
       "A) console.write('Hello World')",
       "B) print('Hello World')",
-      ") console.log('Hello World')",
+      "C) console.log('Hello World')",
       "D) document.log('Hello World')",
     ],
     answer: "C) console.log('Hello World')",
@@ -26,8 +26,8 @@ let questions = [
   {
     number: 3,
     question: "What will 2 + '2' evaluate to in JavaScript?",
-    options: ["A) 4", "B) '22'", "C) NaN", "D) Error"],
-    answer: "B) '22' ",
+    options: ["A) 4", "B) 22", "C) NaN", "D) Error"],
+    answer: "B) 22",
   },
   {
     number: 4,

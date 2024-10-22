@@ -234,6 +234,16 @@ body{
     background: rgb(255,255,255,0.2);
     border-color: rgb(255,255,255,0.2);;
 }
+.option.correct{
+    background-color: #f4f4f4;
+    color: #c71616;
+    border-color: #f4f4f4;
+}
+.option.incorrect{
+    background-color: transparent;
+    color: #350505;
+    border-color: #350505;
+}
 .quizFooter{
     display: flex;
     align-items: center;

@@ -25,15 +25,20 @@ continueBtn.onclick = () => {
   quizBox.classList.add("active"); // Display the quiz box
 
   showQuestions(0); // Load the first question
+  questionCounter(1);
 };
 
 let questionCount = 0; // Track the current question index
+let questionNumb = 1;
 
 // Event listener for "Next" button to move to the next question
 nextBtn.onclick = () => {
   if (questionCount < questions.length - 1) {
     questionCount++; // If there are more questions, increment the question count
     showQuestions(questionCount); // Load the next question
+
+    questionNumb++;
+    questionCounter(questionNumb);
   } else {
     alert("Quiz Completed!"); // If it's the last question, display a completion message
     nextBtn.disabled = true; // disable the "Next" button after the quiz is completed
@@ -54,4 +59,27 @@ function showQuestions(index) {
                     <div class="option"><span>${questions[index].options[3]}</span></div>`;
 
   optionList.innerHTML = optionTag;
+
+  const option = document.querySelectorAll(".option");
+  for (let i = 0; i < option.length; i++) {
+    option[i].setAttribute("onclick", "optionSelected(this)");
+  }
+}
+
+function optionSelected(answer) {
+  let userAnswer = answer.textContent;
+  let correctAnswer = questions[questionCount].answer;
+
+  if (userAnswer == correctAnswer) {
+    console.log("answer is correct");
+    answer.classList.add("correct");
+  } else {
+    console.log("wrong answer");
+    answer.classList.add("incorrect");
+  }
+}
+
+function questionCounter(index) {
+  const questionTotal = document.querySelector(".totalQuestion");
+  questionTotal.textContent = `${index} of ${questions.length} questions`;
 }
