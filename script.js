@@ -4,19 +4,54 @@ const exitBtn = document.querySelector(".btn_exit");
 const main = document.querySelector(".main");
 const continueBtn = document.querySelector(".btn_continue");
 const quiz = document.querySelector(".quiz");
+const quizBox = document.querySelector(".quizBox");
+const nextBtn = document.querySelector(".next_btn");
 
+// Event listener for "Start" button to open the quiz guide popup
 startBtn.onclick = () => {
-  popUp.classList.add("active");
-  main.classList.add("active");
+  popUp.classList.add("active"); // Show the popup
+  main.classList.add("active"); // Blur the main content
 };
-
+// Event listener for "Exit" button to close the popup and return to the main screen
 exitBtn.onclick = () => {
-  popUp.classList.remove("active");
-  main.classList.remove("active");
+  popUp.classList.remove("active"); // Hide the popup
+  main.classList.remove("active"); // Unblur the main content
+};
+// Event listener for "Continue" button to begin the quiz
+continueBtn.onclick = () => {
+  quiz.classList.add("active"); // Show the quiz
+  popUp.classList.remove("active"); // Hide the popup
+  main.classList.remove("active"); // Unblur the main content
+  quizBox.classList.add("active"); // Display the quiz box
+
+  showQuestions(0); // Load the first question
 };
 
-continueBtn.onclick = () => {
-  quiz.classList.add("active");
-  popUp.classList.remove("active");
-  main.classList.remove("active");
+let questionCount = 0; // Track the current question index
+
+// Event listener for "Next" button to move to the next question
+nextBtn.onclick = () => {
+  if (questionCount < questions.length - 1) {
+    questionCount++; // If there are more questions, increment the question count
+    showQuestions(questionCount); // Load the next question
+  } else {
+    alert("Quiz Completed!"); // If it's the last question, display a completion message
+    nextBtn.disabled = true; // disable the "Next" button after the quiz is completed
+    nextBtn.textContent = "Completed";
+  }
 };
+
+const optionList = document.querySelector(".option_list");
+
+// Function to display a question and its options based on the index
+function showQuestions(index) {
+  const questionText = document.querySelector(".question_txt");
+  questionText.textContent = `${questions[index].number} ${questions[index].question}`;
+
+  let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+                    <div class="option"><span>${questions[index].options[1]}</span></div>
+                    <div class="option"><span>${questions[index].options[2]}</span></div>
+                    <div class="option"><span>${questions[index].options[3]}</span></div>`;
+
+  optionList.innerHTML = optionTag;
+}

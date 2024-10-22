@@ -89,7 +89,7 @@ body{
 .popup{
     width: 760px;
     height: 440px;
-    background-color: rgb(255, 223, 222);
+    background-color: rgb(255, 255, 255);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -164,7 +164,7 @@ body{
     height: 100vh;
     background-color: #9a0606 ;
     position: relative;
-    /* left: +50%; */
+    left: +50%;
     transition: 0.5s ease-in;
     z-index: 10;
     display: flex;
@@ -175,7 +175,7 @@ body{
     left: 0;
 }
 .quizBox{
-    width: 500px;
+    width: 600px;
     position: relative;
     background: transparent;
     border: 3px solid #f4f4f4;
@@ -183,6 +183,16 @@ body{
     padding: 30px;
     display: flex;
     flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.8s);
+}
+.quizBox.active{
+    pointer-events:all;
+    opacity: 1;
+    transform: scale(1);
+    transition: 1s ease-in;
+    transition-delay: 0.3s;
 }
 .quizBox h1{
     font-size: 36px;
@@ -199,4 +209,53 @@ body{
 .quizHeader span{
     font-size: 24px;
     font-weight: 500;
+}
+.score{
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  color: #350505;
+  padding: 10px;  
+}
+.question{
+    font-size: 28px;
+    font-weight: 600;
+}
+.option{
+  width: 95%;  
+  background: transparent;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 18px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.option:hover{
+    background: rgb(255,255,255,0.2);
+    border-color: rgb(255,255,255,0.2);;
+}
+.quizFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+.totalQuestion{
+    font-size: 16px;
+    font-weight: 500;
+}
+.next_btn{
+    width: 100px;
+    height: 50px;
+    background: #f4f4f46d;
+    border: 3px solid rgba(255, 255, 255, 0.426);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #350505;
+    transition: 0.3s;
+}
+.next_btn:hover{
+    background: #f4f4f4;
+    border-color: #f4f4f4;
 }
