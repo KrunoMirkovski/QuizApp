@@ -69,6 +69,7 @@ function showQuestions(index) {
 function optionSelected(answer) {
   let userAnswer = answer.textContent;
   let correctAnswer = questions[questionCount].answer;
+  let allOptions = optionList.children.length;
 
   if (userAnswer == correctAnswer) {
     console.log("answer is correct");
@@ -76,6 +77,16 @@ function optionSelected(answer) {
   } else {
     console.log("wrong answer");
     answer.classList.add("incorrect");
+    //if answer is incorrect, auto select the corrected answer
+    for (let i = 0; i < allOptions; i++) {
+      if (optionList.children[i].textContent == correctAnswer) {
+        optionList.children[i].setAttribute("class", "option correct");
+      }
+    }
+  }
+  //when user select an answer, disable all options
+  for (let i = 0; i < allOptions; i++) {
+    optionList.children[i].classList.add("disabled");
   }
 }
 

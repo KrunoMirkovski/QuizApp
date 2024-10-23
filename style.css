@@ -244,6 +244,9 @@ body{
     color: #350505;
     border-color: #350505;
 }
+.option.disabled{
+    pointer-events: none;
+}
 .quizFooter{
     display: flex;
     align-items: center;
