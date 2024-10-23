@@ -110,4 +110,22 @@ function Score() {
 function showResultBox() {
   quizBox.classList.remove("active");
   resultBox.classList.add("active");
+
+  const finalScoreText = document.querySelector(".final_score");
+  finalScoreText.textContent = `Your Score: ${userScore} out of ${questions.length}`;
+
+  const progress = document.querySelector(".progress");
+  const progressValue = document.querySelector(".progress_value");
+  let progressStartValue = 0;
+  let progressEndValue = (userScore / questions.length) * 100;
+  let progressSpeed = 10;
+
+  let circularProgress = setInterval(() => {
+    progressStartValue++;
+    // console.log(progressStartValue);
+    progressValue.textContent = `${progressStartValue}%`;
+    if (progressStartValue == progressEndValue) {
+      clearInterval(circularProgress);
+    }
+  }, progressSpeed);
 }
