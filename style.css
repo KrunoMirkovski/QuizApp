@@ -186,6 +186,8 @@ body{
     pointer-events: none;
     opacity: 0;
     transform: scale(0.8s);
+    transition: 0.4s ease-in;
+    transition-delay: 0s;
 }
 .quizBox.active{
     pointer-events:all;
@@ -289,12 +291,18 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) scale(0.8);
     border: 3px solid #f4f4f4;
     border-radius: 12px;
     padding: 30px;
     opacity: 0;
     pointer-events: none;
+    transition: 0.8s ease;
+}
+.results_wrap.active{
+    pointer-events: all;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
 }
 .results_wrap h3{
     font-size: 46px;

@@ -6,6 +6,7 @@ const continueBtn = document.querySelector(".btn_continue");
 const quiz = document.querySelector(".quiz");
 const quizBox = document.querySelector(".quizBox");
 const nextBtn = document.querySelector(".next_btn");
+const resultBox = document.querySelector(".results_wrap");
 
 // Event listener for "Start" button to open the quiz guide popup
 startBtn.onclick = () => {
@@ -44,9 +45,7 @@ nextBtn.onclick = () => {
 
     nextBtn.classList.remove("active");
   } else {
-    alert("Quiz Completed!"); // If it's the last question, display a completion message
-    nextBtn.disabled = true; // disable the "Next" button after the quiz is completed
-    nextBtn.textContent = "Completed";
+    showResultBox();
   }
 };
 
@@ -106,4 +105,9 @@ function questionCounter(index) {
 function Score() {
   const scoreText = document.querySelector(".score");
   scoreText.textContent = `Score:${userScore} / ${questions.length}`;
+}
+
+function showResultBox() {
+  quizBox.classList.remove("active");
+  resultBox.classList.add("active");
 }
