@@ -164,7 +164,8 @@ body{
     height: 100vh;
     background-color: #9a0606 ;
     position: relative;
-    left: +50%;
+    /* left: +50%; */
+    left: 0;
     transition: 0.5s ease-in;
     z-index: 10;
     display: flex;
@@ -279,4 +280,79 @@ body{
     background: #f4f4f4;
     border-color: #f4f4f4;
     color: #350505;
+}
+.results_wrap{
+    width: 600px;
+    background: #251c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid #f4f4f4;
+    border-radius: 12px;
+    padding: 30px;
+}
+.results_wrap h3{
+    font-size: 46px;
+}
+.percent_box{
+   width: 300px; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 20px 0 40px;
+}
+.progress{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(#f4f4f4 3.6deg, #c71616 0deg );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.progress_value{
+    font-size: 40px;
+    font-weight: 600;
+}
+.final_score{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.buttons{
+    display: flex;
+}
+.buttons button{
+    width: 150px;
+    height: 50px;
+    font-size:14px;
+    font-weight: 500;
+    background: #c71616;
+    border: 3px solid #f4f4f4;
+    border-radius: 12px;
+    color: #f4f4f4;
+    margin: 0 20px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.buttons button:nth-child(1){
+    background: #350505;
+    border-color: #9a0606;
+}
+.buttons button:nth-child(1):hover{
+    background: #c71616;
+    border-color: #c71616;
+}
+.buttons button:nth-child(2){
+    background: transparent;
+    color: #f4f4f4;
+}
+.buttons button:nth-child(2):hover{
+    background: #c71616;
+    color: #f4f4f4;
 }
