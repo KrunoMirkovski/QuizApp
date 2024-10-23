@@ -82,7 +82,7 @@ let questions = [
       "D) undefined is falsy, but null is truthy",
     ],
     answer:
-      "B) null represents an intentional absence of value, while undefined means a variable has been declared but not assigned a value.",
+      "B) null represents an intentional absence of value, while undefined means a variable has been declared but not assigned a value",
   },
   {
     number: 10,

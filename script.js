@@ -26,10 +26,12 @@ continueBtn.onclick = () => {
 
   showQuestions(0); // Load the first question
   questionCounter(1);
+  Score();
 };
 
 let questionCount = 0; // Track the current question index
 let questionNumb = 1;
+let userScore = 0;
 
 // Event listener for "Next" button to move to the next question
 nextBtn.onclick = () => {
@@ -39,6 +41,8 @@ nextBtn.onclick = () => {
 
     questionNumb++;
     questionCounter(questionNumb);
+
+    nextBtn.classList.remove("active");
   } else {
     alert("Quiz Completed!"); // If it's the last question, display a completion message
     nextBtn.disabled = true; // disable the "Next" button after the quiz is completed
@@ -74,6 +78,8 @@ function optionSelected(answer) {
   if (userAnswer == correctAnswer) {
     console.log("answer is correct");
     answer.classList.add("correct");
+    userScore += 1;
+    Score();
   } else {
     console.log("wrong answer");
     answer.classList.add("incorrect");
@@ -88,9 +94,16 @@ function optionSelected(answer) {
   for (let i = 0; i < allOptions; i++) {
     optionList.children[i].classList.add("disabled");
   }
+
+  nextBtn.classList.add("active");
 }
 
 function questionCounter(index) {
   const questionTotal = document.querySelector(".totalQuestion");
   questionTotal.textContent = `${index} of ${questions.length} questions`;
+}
+
+function Score() {
+  const scoreText = document.querySelector(".score");
+  scoreText.textContent = `Score:${userScore} / ${questions.length}`;
 }

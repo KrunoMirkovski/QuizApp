@@ -260,15 +260,23 @@ body{
 .next_btn{
     width: 100px;
     height: 50px;
-    background: #f4f4f46d;
-    border: 3px solid rgba(255, 255, 255, 0.426);
+    background: transparent;
+    border: 3px solid #ffffff6d;
     border-radius: 12px;
     font-size: 16px;
     font-weight: 500;
-    color: #350505;
+    color: #f4f4f4;
     transition: 0.3s;
+    pointer-events: none;
 }
-.next_btn:hover{
+.next_btn.active{
+    pointer-events: all;
+    background: #ffffff6d;
+    border-color: #f4f4f4;
+    color: #350505;
+}
+.next_btn.active:hover{
     background: #f4f4f4;
     border-color: #f4f4f4;
+    color: #350505;
 }
