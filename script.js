@@ -8,6 +8,7 @@ const quizBox = document.querySelector(".quizBox");
 const nextBtn = document.querySelector(".next_btn");
 const resultBox = document.querySelector(".results_wrap");
 const tryAgainBtn = document.querySelector(".tryAgain_btn");
+const goHomeBtn = document.querySelector(".goHome_btn");
 
 // Event listener for "Start" button to open the quiz guide popup
 startBtn.onclick = () => {
@@ -31,19 +32,6 @@ continueBtn.onclick = () => {
   Score();
 };
 
-tryAgainBtn.onclick = () => {
-  quizBox.classList.add("active");
-  resultBox.classList.remove("active");
-  nextBtn.classList.remove("active");
-
-  questionCount = 0;
-  questionNumb = 1;
-  userScore = 0;
-  showQuestions(questionCount);
-  questionCounter(questionNumb);
-  Score();
-};
-
 let questionCount = 0; // Track the current question index
 let questionNumb = 1;
 let userScore = 0;
@@ -61,6 +49,31 @@ nextBtn.onclick = () => {
   } else {
     showResultBox();
   }
+};
+
+tryAgainBtn.onclick = () => {
+  quizBox.classList.add("active");
+  resultBox.classList.remove("active");
+  nextBtn.classList.remove("active");
+
+  questionCount = 0;
+  questionNumb = 1;
+  userScore = 0;
+  showQuestions(questionCount);
+  questionCounter(questionNumb);
+  Score();
+};
+
+goHomeBtn.onclick = () => {
+  quiz.classList.remove("active");
+  resultBox.classList.remove("active");
+  nextBtn.classList.remove("active");
+
+  questionCount = 0;
+  questionNumb = 1;
+  userScore = 0;
+  showQuestions(questionCount);
+  questionCounter(questionNumb);
 };
 
 const optionList = document.querySelector(".option_list");
