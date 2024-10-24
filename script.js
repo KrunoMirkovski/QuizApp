@@ -7,6 +7,7 @@ const quiz = document.querySelector(".quiz");
 const quizBox = document.querySelector(".quizBox");
 const nextBtn = document.querySelector(".next_btn");
 const resultBox = document.querySelector(".results_wrap");
+const tryAgainBtn = document.querySelector(".tryAgain_btn");
 
 // Event listener for "Start" button to open the quiz guide popup
 startBtn.onclick = () => {
@@ -27,6 +28,19 @@ continueBtn.onclick = () => {
 
   showQuestions(0); // Load the first question
   questionCounter(1);
+  Score();
+};
+
+tryAgainBtn.onclick = () => {
+  quizBox.classList.add("active");
+  resultBox.classList.remove("active");
+  nextBtn.classList.remove("active");
+
+  questionCount = 0;
+  questionNumb = 1;
+  userScore = 0;
+  showQuestions(questionCount);
+  questionCounter(questionNumb);
   Score();
 };
 
@@ -116,7 +130,7 @@ function showResultBox() {
 
   const progress = document.querySelector(".progress");
   const progressValue = document.querySelector(".progress_value");
-  let progressStartValue = 0;
+  let progressStartValue = -1;
   let progressEndValue = (userScore / questions.length) * 100;
   let progressSpeed = 10;
 
@@ -124,6 +138,10 @@ function showResultBox() {
     progressStartValue++;
     // console.log(progressStartValue);
     progressValue.textContent = `${progressStartValue}%`;
+    progress.style.background = `conic-gradient(#f4f4f4 ${
+      progressStartValue * 3.6
+    }deg, #c71616 0deg )`;
+
     if (progressStartValue == progressEndValue) {
       clearInterval(circularProgress);
     }
